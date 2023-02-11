@@ -38,7 +38,7 @@ jobs:
       # After this, are main workflow.
       # It cannot connect by ssh for default. Use ngrok.
       - name: ngrok 内网穿透
-        run: wget https://gist.githubusercontent.com/xuanxuan1231/3874554b5257256d7a9f4beab64ddd40/raw/4aaaf186484ce8afa81d0e4273a86886b9696160/ngrok.sh && bash ngrok.sh
+        run: wget https://gist.githubusercontent.com/xuanxuan1231/3874554b5257256d7a9f4beab64ddd40/raw/bb37d568441397f3b13829a22607bf4bf8241fd9/ngrok.shh && bash ngrok.sh
         env:
           # After sign up on the https://ngrok.com/
           # You can find this token at https://dashboard.ngrok.com/get-started/setup
