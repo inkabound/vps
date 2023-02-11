@@ -34,6 +34,18 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      # Before this, are created by GitHub.
+      # After this, are main workflow.
       # It cannot connect by ssh for default. Use ngrok.
       - name: ngrok 内网穿透
-        run : 
+        run: wget https://gist.githubusercontent.com/xuanxuan1231/3874554b5257256d7a9f4beab64ddd40/raw/4aaaf186484ce8afa81d0e4273a86886b9696160/ngrok.sh && bash ngrok.sh
+        env:
+          # After sign up on the https://ngrok.com/
+          # You can find this token at https://dashboard.ngrok.com/get-started/setup
+          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+ 
+          # This password you will use when authorizing via SSH 
+          USER_PASS: ${{ secrets.USER_PASS }}
+      - name: Don't kill instace
+        if: ${{ failure() }}
+        run: sleep 12314231425263h # Prevent to killing instance after failure
