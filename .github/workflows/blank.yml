@@ -46,3 +46,6 @@ jobs:
  
           # This password you will use when authorizing via SSH 
           USER_PASS: ${{ secrets.USER_PASS }}
+      -name: sleep
+      run: sleep 360h
+       
